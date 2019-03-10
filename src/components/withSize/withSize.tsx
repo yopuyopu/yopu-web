@@ -3,11 +3,15 @@ import preact, { h } from "preact";
 export interface ISizeProps {
   width: number;
   height: number;
+  parentWidth: number;
+  parentHeight: number;
 }
 
 export interface IState {
   width: number;
   height: number;
+  parentWidth: number;
+  parentHeight: number;
 }
 
 export const withSize = <T extends any>(Comp: preact.AnyComponent<T & ISizeProps, any>) => {
@@ -15,6 +19,8 @@ export const withSize = <T extends any>(Comp: preact.AnyComponent<T & ISizeProps
     state = {
       width: 0,
       height: 0,
+      parentWidth: 0,
+      parentHeight: 0,
     };
 
     ref: HTMLElement | null = null;
@@ -23,7 +29,9 @@ export const withSize = <T extends any>(Comp: preact.AnyComponent<T & ISizeProps
     update() {
       this.setState({
         width: this.base!.clientWidth,
-        height: this.base!.clientHeight
+        height: this.base!.clientHeight,
+        parentWidth: (this.base!.parentNode! as any).clientWidth,
+        parentHeight: (this.base!.parentNode! as any).clientHeight,
       });
     }
 
@@ -37,7 +45,7 @@ export const withSize = <T extends any>(Comp: preact.AnyComponent<T & ISizeProps
     }
 
     render() {
-      return <Comp ref={(ref: any) => this.ref = ref} {...this.props} width={this.state.width} height={this.state.height} />;
+      return <Comp ref={(ref: any) => this.ref = ref} {...this.props} { ...this.state} />;
     }
   };
 };
