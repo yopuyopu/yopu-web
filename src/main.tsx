@@ -1,8 +1,8 @@
 import preact, { h } from "preact";
 import "./styles/style.scss";
-import { Layout } from './components/layout';
-import { updateState } from './state';
-import { produceNextTick } from 'libyopu';
+import { Layout } from "./components/layout";
+import { updateState } from "./state";
+import { produceNextTick } from "libyopu";
 
 class Main extends preact.Component {
   render () {

@@ -1,41 +1,41 @@
-import picostyle from 'picostyle';
-import preact, { h } from 'preact';
-import { Keypad } from '../keypad';
-import { withState } from '../../state';
-import { Blocks } from '../blocks';
+import picostyle from "picostyle";
+import preact, { h } from "preact";
+import { Keypad } from "../keypad";
+import { withState } from "../../state";
+import { Blocks } from "../blocks";
 
 const style = picostyle(h as any);
 
-const Container = style('div')(_props => ({
-  height: '100%',
-  width: '100%',
-  overflow: 'hidden',
-  backgroundColor: 'black',
-  textColor: 'white',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'stretch',
-  alignItems: 'stretch'
+const Container = style("div")(_props => ({
+  height: "100%",
+  width: "100%",
+  overflow: "hidden",
+  backgroundColor: "black",
+  textColor: "white",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "stretch",
+  alignItems: "stretch"
 }));
 
-const Top = style('div')(_props => ({
-  backgroundColor: 'red',
-  flex: '1',
-  height: '0'
+const Top = style("div")(_props => ({
+  backgroundColor: "red",
+  flex: "1",
+  height: "0"
 }));
 
-const Center = style('div')(_props => ({
-  backgroundColor: 'blue',
-  flex: '2',
-  height: '0',
-  display: 'flex',
-  justifyContent: 'center',
+const Center = style("div")(_props => ({
+  backgroundColor: "blue",
+  flex: "2",
+  height: "0",
+  display: "flex",
+  justifyContent: "center",
 }));
 
-const Bottom = style('div')(_props => ({
-  backgroundColor: 'green',
-  flex: '1',
-  height: '0'
+const Bottom = style("div")(_props => ({
+  backgroundColor: "green",
+  flex: "1",
+  height: "0"
 }));
 
 

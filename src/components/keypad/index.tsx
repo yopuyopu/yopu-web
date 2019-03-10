@@ -1,7 +1,7 @@
 import picostyle from "picostyle";
-import preact, { h } from 'preact';
-import { withSize } from '../withSize/withSize';
-import { moveDown, moveLeft, moveRight, rotate } from '../../state';
+import preact, { h } from "preact";
+import { withSize } from "../withSize/withSize";
+import { moveDown, moveLeft, moveRight, rotate } from "../../state";
 const style = picostyle(h as any);
 
 const Container = style("div")(_props => ({
@@ -23,13 +23,13 @@ const Bottom = style("div")(_props => ({
   display: "flex",
 }));
 
-const Button = withSize(style('div')(_props => ({
-  backgroundColor: 'black',
+const Button = withSize(style("div")(_props => ({
+  backgroundColor: "black",
   height: "100%",
   lineHeight: "100%",
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   borderRadius: "20px",
   width: `${_props.parentHeight}px`,
   ":active": {

@@ -1,7 +1,7 @@
 import preact, { h } from "preact";
 
 import * as libyopu from "libyopu";
-import produce from 'immer';
+import produce from "immer";
 
 export interface IRootState {
   ourGame: libyopu.IState;
